@@ -136,22 +136,6 @@ related_blog_posts:
   enabled: true
   max_related: 5
 
-# Giscus comments (RECOMMENDED)
-# Follow instructions on https://giscus.app/ to setup for your repo to fill out the information below.
-giscus:
-  repo: # <your-github-user-name>/<your-github-repo-name>
-  repo_id: # leave empty or specify your repo_id (see https://giscus.app/)
-  category: # name of the category under which discussions will be created
-  category_id: # leave empty or specify your category_id (see https://giscus.app/)
-  mapping: # identify discussions by post title
-  strict: # use strict identification mode
-  reactions_enabled: # enable (1) or disable (0) emoji reactions
-  input_position: # whether to display input form below (bottom) or above (top) the comments
-  dark_theme: # name of the dark color scheme (preferred works well with al-folio dark mode)
-  light_theme: # name of the light color scheme (preferred works well with al-folio light mode)
-  emit_metadata:
-  lang:
-
 # External sources.
 # If you have blog posts published on medium.com or other external sources,
 # you can display them in your blog by adding a link to the RSS feed.
@@ -281,7 +265,6 @@ plugins:
   - al_search
   - al_charts
   - al_math
-  - al_comments
   - al_newsletter
 
 # Sitemap settings
