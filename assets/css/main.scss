@@ -48,3 +48,18 @@ h5,
 h6 {
   font-family: "DM Serif Display", serif;
 }
+
+// Site-local accent color override (Slate Indigo / Pewter, replacing the
+// gem's default purple/cyan). Same mechanism as the font override above:
+// _themes.scss sets these on :root and html[data-theme="dark"] earlier in
+// this same compiled file, so an equal-specificity rule later in source
+// order wins without touching gem-owned _sass/.
+:root {
+  --global-theme-color: #34415c;
+  --global-hover-color: #34415c;
+}
+
+html[data-theme="dark"] {
+  --global-theme-color: #8fa0b3;
+  --global-hover-color: #8fa0b3;
+}
