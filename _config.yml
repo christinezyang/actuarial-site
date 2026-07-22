@@ -60,8 +60,6 @@ al_folio:
     source: al-org-dev/distill-template#al-folio
     allow_remote_loader: true
   features:
-    cv:
-      enabled: true
     distill:
       enabled: true
   compat:
@@ -253,7 +251,6 @@ plugins:
   # al-folio plugins
   - al_folio_core
   - al_icons
-  - al_folio_cv
   - al_folio_distill
   - al_folio_upgrade
   - al_folio_bootstrap_compat
@@ -656,25 +653,3 @@ third_party_libraries:
       js: "https://cdn.jsdelivr.net/npm/vega-lite@{{version}}/build/vega-lite.min.js"
       js_map: "https://cdn.jsdelivr.net/npm/vega-lite@{{version}}/build/vega-lite.min.js.map"
     version: "5.16.3"
-
-# -----------------------------------------------------------------------------
-# Get external JSON data
-# -----------------------------------------------------------------------------
-
-jekyll_get_json:
-  - data: resume
-    json: assets/json/resume.json # it can also be an url
-
-jsonresume:
-  - basics
-  - work
-  - education
-  - publications
-  - projects
-  - volunteer
-  - awards
-  - certificates
-  - skills
-  - languages
-  - interests
-  - references
