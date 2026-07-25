@@ -2,10 +2,10 @@
 layout: page
 title: projects
 permalink: /projects/
-description: A growing collection of your cool projects.
+description: Work experience, course projects, and prior (pre-actuarial) experience.
 nav: true
 nav_order: 3
-display_categories: [work, fun]
+display_categories: [work-experience, projects, prior-experience]
 horizontal: false
 ---
 
@@ -14,8 +14,14 @@ horizontal: false
 {% if site.enable_project_categories and page.display_categories %}
   <!-- Display categorized projects -->
   {% for category in page.display_categories %}
+  {% case category %}
+    {% when 'work-experience' %}{% assign category_label = 'Work Experience' %}
+    {% when 'projects' %}{% assign category_label = 'Projects' %}
+    {% when 'prior-experience' %}{% assign category_label = 'Prior Experience' %}
+    {% else %}{% assign category_label = category %}
+  {% endcase %}
   <a id="{{ category }}" href=".#{{ category }}">
-    <h2 class="category">{{ category }}</h2>
+    <h2 class="category">{{ category_label }}</h2>
   </a>
   {% assign categorized_projects = site.projects | where: "category", category %}
   {% assign sorted_projects = categorized_projects | sort: "importance" %}
