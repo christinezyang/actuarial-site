@@ -61,9 +61,23 @@ if (/gem 'al_math',\s*:git =>/.test(gemfile)) {
   failures.push("`Gemfile` must not use git-branch pin for `al_math`; use released gem version.");
 }
 
-for (const forbiddenPath of ["_includes", "_layouts", "_sass", "_scripts", "assets/tailwind", "tailwind.config.js", "assets/webfonts"]) {
+for (const forbiddenPath of ["_layouts", "_sass", "_scripts", "assets/tailwind", "tailwind.config.js", "assets/webfonts"]) {
   if (exists(forbiddenPath)) {
     failures.push(`Starter must not own core component path \`${forbiddenPath}\`; move ownership to the corresponding gem.`);
+  }
+}
+
+// `_includes` is otherwise forbidden too, but this site intentionally owns a single,
+// explicitly allow-listed override: projects.liquid adds `subtitle`/`tags` support to
+// the project card template. Anything else showing up here still fails the check.
+const includesAllowlist = new Set(["projects.liquid"]);
+if (exists("_includes")) {
+  const includesEntries = fs.readdirSync(path.join(root, "_includes"));
+  const unexpectedIncludes = includesEntries.filter((entry) => !includesAllowlist.has(entry));
+  if (unexpectedIncludes.length > 0) {
+    failures.push(
+      `Starter must not own core component path \`_includes\` beyond the allow-listed override(s) (${Array.from(includesAllowlist).join(", ")}); found unexpected: ${unexpectedIncludes.join(", ")}.`
+    );
   }
 }
 
