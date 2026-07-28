@@ -1,6 +1,6 @@
 ---
 layout: page
-title: projects
+title: Projects
 permalink: /projects/
 description: Work experience, course projects, and prior (pre-actuarial) experience.
 nav: true
