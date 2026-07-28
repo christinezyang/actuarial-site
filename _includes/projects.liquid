@@ -20,15 +20,9 @@
         {% endif %}
         <p class="card-text">{{ project.description }}</p>
         {% if project.tags %}
-          <div class="row ml-1 mr-1 p-0" style="gap: 0.35rem; margin-bottom: 0.5rem;">
-            {% for tag in project.tags %}
-              <span
-                style="font-size: 0.7rem; padding: 0.2rem 0.5rem; border-radius: 3px; background: color-mix(in srgb, var(--global-theme-color) 13%, transparent); color: var(--global-theme-color);"
-              >
-                {{- tag -}}
-              </span>
-            {% endfor %}
-          </div>
+          <p class="card-text" style="margin-bottom: 0.5rem; opacity: 0.55; font-size: 0.75rem;">
+            {{ project.tags | join: ' · ' }}
+          </p>
         {% endif %}
         <div class="row ml-1 mr-1 p-0">
           {% if project.github %}

@@ -1,8 +1,8 @@
 ---
 layout: page
-title: "Catastrophe Modeling & Portfolio Allocation in P&C Insurance"
-subtitle: Risk Management in P&C Insurance, 2025
-description: Modeling catastrophe risk across seven state-peril exposures and recommending \$500M in portfolio growth for a fictitious P&C insurer — winning presentation in a client-facing capstone.
+title: "Catastrophe Modeling & Portfolio Allocation"
+subtitle: Risk Management in P&C Insurance, Columbia University
+description: Modeled catastrophe risk and recommended \$500M in portfolio growth for a fictitious P&C insurer. Selected as winning presenting team.
 category: projects
 importance: 1
 tags: [Cat Modeling, VaR/TVaR, Capital Allocation, RAROC, Excel]
