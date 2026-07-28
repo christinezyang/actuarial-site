@@ -4,7 +4,7 @@ title: "Placeholder: Predictive Modeling — Sleep Duration"
 subtitle: Predictive Modeling, Fall 2025
 description: Does socioeconomic and demographic data actually predict how long someone sleeps?
 category: projects
-importance: 1
+importance: 2
 tags: [OLS, Variable Selection, Random Forest, R]
 ---
 

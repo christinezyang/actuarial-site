@@ -63,3 +63,14 @@ html[data-theme="dark"] {
   --global-theme-color: #8fa0b3;
   --global-hover-color: #8fa0b3;
 }
+
+// .caption is referenced by figure.liquid's <figcaption> and used by hand
+// in project/post bodies for table captions, but the gem never actually
+// styles it — this is the only definition that exists anywhere.
+.caption {
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--global-text-color-light);
+}
