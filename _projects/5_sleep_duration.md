@@ -2,10 +2,10 @@
 layout: page
 title: "The Data Ceiling in Predicting Sleep Duration"
 subtitle: Predictive Modeling in Finance & Insurance, Columbia University
-description: Six different modeling approaches all converged on the same finding — demographic and economic survey data explain only about 10% of why people sleep as long as they do.
+description: Explored six different modeling approaches, but they all pointed to the same finding: demographic and economic survey data explain only about 10% of sleep duration.
 category: projects
 importance: 2
-tags: [OLS, Ridge/Lasso/Elastic Net, Random Forest, Cross-Validation, R]
+tags: [OLS, Ridge/Lasso/Elastic Net, PCA, Random Forest, Cross-Validation, R]
 ---
 
 **Class:** Predictive Modeling (2026)
