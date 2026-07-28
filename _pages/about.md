@@ -2,7 +2,6 @@
 layout: about
 title: About
 permalink: /
-subtitle: Actuarial Science Student
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -18,6 +17,6 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Hi! I'm Christine, currently an M.S. in Actuarial Science student at Columbia University. I grew up in Short Hills / Millburn, NJ and went to undergrad at Duke University.
+Hi 👋! I'm Christine, currently an M.S. in Actuarial Science student at Columbia University. I grew up in Short Hills / Millburn, NJ and went to undergrad at Duke University, where I studied math and philosophy.
 
-This site is my actuarial portfolio: project write-ups and blog posts on actuarial and statistical topics.
+This site serves as my actuarial portfolio. Explore my work experience, past projects, and blog posts on actuarial topics.

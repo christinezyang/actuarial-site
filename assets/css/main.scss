@@ -74,3 +74,14 @@ html[data-theme="dark"] {
   font-size: 0.85rem;
   color: var(--global-text-color-light);
 }
+
+// al_folio_core's about.liquid hardcodes the "news" / "latest posts" / "selected
+// publications" section headings as lowercase text directly in the template (not
+// a config value), so there's no front-matter/data lever to fix the casing. This
+// is a presentation-only fix scoped to .post h2 (about/page/post layouts) rather
+// than overriding the layout file - safe because every heading we actually write
+// is already properly capitalized, so this only visibly changes the gem's own
+// hardcoded lowercase text.
+.post h2 {
+  text-transform: capitalize;
+}

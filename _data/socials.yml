@@ -1,4 +1,13 @@
 # this file contains the social media links and usernames of the author
 # the socials will be displayed in the order they are defined here
 # for more information, please refer to the documentation of jekyll-socials plugin: https://github.com/george-gca/jekyll-socials
-linkedin_username: christinezyang
+#
+# linkedin_username here (rather than jekyll-socials' built-in `linkedin_username` key)
+# on purpose: the built-in key always auto-generates a hover tooltip from the key name
+# ("Linkedin username") with no way to override it. Using a custom key with an explicit
+# `logo` icon class instead renders the identical fa-brands fa-linkedin icon, but lets us
+# set an empty title so no tooltip shows at all.
+linkedin:
+  logo: fa-brands fa-linkedin
+  title: ""
+  url: https://www.linkedin.com/in/christinezyang

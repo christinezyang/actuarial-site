@@ -67,10 +67,13 @@ for (const forbiddenPath of ["_layouts", "_sass", "_scripts", "assets/tailwind",
   }
 }
 
-// `_includes` is otherwise forbidden too, but this site intentionally owns a single,
-// explicitly allow-listed override: projects.liquid adds `subtitle`/`tags` support to
-// the project card template. Anything else showing up here still fails the check.
-const includesAllowlist = new Set(["projects.liquid"]);
+// `_includes` is otherwise forbidden too, but this site intentionally owns a small,
+// explicitly allow-listed set of overrides: projects.liquid adds `subtitle`/`tags`
+// support to the project card template, and latest_posts.liquid fixes an upstream
+// empty-state bug (it checked whether the front matter config block was blank, not
+// whether site.posts was actually empty) so a real "no posts yet" message shows on
+// the about page instead of an empty table. Anything else here still fails the check.
+const includesAllowlist = new Set(["projects.liquid", "latest_posts.liquid"]);
 if (exists("_includes")) {
   const includesEntries = fs.readdirSync(path.join(root, "_includes"));
   const unexpectedIncludes = includesEntries.filter((entry) => !includesAllowlist.has(entry));
