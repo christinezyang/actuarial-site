@@ -79,11 +79,13 @@ Could the low R² be an artifact of linear assumptions? To test that, we fit a R
 
 RF also did worse. Its flexibility added unnecessary variance, which aligns with expectations when the data has one dominant, essentially linear predictor.
 
-Two cross-checks reinforced the picture: both RF's importance ranking (% increase in MSE) and OLS |t|-statistics independently rank `totwrk` first by a wide margin, and RF's marginal-effect curve for work hours wiggles around the OLS line without any systematic nonlinear shape.
+Two cross-checks reinforced the picture: both RF's importance ranking (% increase in MSE) and OLS's absolute t-statistics independently rank `totwrk` first by a wide margin, and RF's marginal-effect curve for work hours wiggles around the OLS line without any systematic nonlinear shape.
 
-<!-- TODO: insert marginal-effect comparison plot (OLS vs. Random Forest, effect of work hours on sleep) here.
-     Upload the image to assets/img/ then use:
-     {% include figure.liquid path="assets/img/FILENAME.png" caption="Marginal effect of work hours on sleep: OLS vs. Random Forest" %} -->
+{% comment %}
+TODO: insert marginal-effect comparison plot (OLS vs. Random Forest, effect of work hours on sleep) here.
+Upload the image to assets/img/ then use:
+{% include figure.liquid path="assets/img/FILENAME.png" caption="Marginal effect of work hours on sleep: OLS vs. Random Forest" %}
+{% endcomment %}
 
 ## Conclusion: A Data Ceiling
 

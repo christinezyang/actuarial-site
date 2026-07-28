@@ -95,10 +95,12 @@ $$ \sigma / \mu $$
 
 Florida Windstorm dominated both Mean Loss and PML metrics, which is not surprising given its hurricane history and density of insured coastal assets. California Earthquake ranked second.
 
-<!-- TODO: insert Mean Loss / PML bar chart across the 7 state-perils here.
-     Upload the image to assets/img/ then use:
-     {% include figure.liquid path="assets/img/FILENAME.png" caption="Mean Loss and PML by state-peril" %}
-     (loading="eager" and a "sizes" attribute optional — see other _projects/_posts entries for examples) -->
+{% comment %}
+TODO: insert Mean Loss / PML bar chart across the 7 state-perils here.
+Upload the image to assets/img/ then use:
+{% include figure.liquid path="assets/img/FILENAME.png" caption="Mean Loss and PML by state-peril" %}
+(loading="eager" and a "sizes" attribute optional — see other _projects/_posts entries for examples)
+{% endcomment %}
 
 ### Step 3: Reinsurance Modeling
 
