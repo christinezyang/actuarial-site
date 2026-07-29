@@ -95,12 +95,7 @@ $$ \sigma / \mu $$
 
 Florida Windstorm dominated both Mean Loss and PML metrics, which is not surprising given its hurricane history and density of insured coastal assets. California Earthquake ranked second.
 
-{% comment %}
-TODO: insert Mean Loss / PML bar chart across the 7 state-perils here.
-Upload the image to assets/img/ then use:
-{% include figure.liquid path="assets/img/FILENAME.png" caption="Mean Loss and PML by state-peril" %}
-(loading="eager" and a "sizes" attribute optional — see other _projects/_posts entries for examples)
-{% endcomment %}
+{% include figure.liquid path="assets/img/cat-modeling-proj_state-perils-pml.png" alt="Bar chart of 100-year and 250-year PML for the seven state-perils" caption="100-year and 250-year PML by state-peril" %}
 
 ### Step 3: Reinsurance Modeling
 
@@ -157,6 +152,8 @@ I used the Co-TVaR capital allocation method for the basis of my growth recommen
 |   Texas WS    |        62.5%        |     \$56.3M      |
 | California EQ |        23.3%        |     \$244.6M     |
 |  Florida WS   |        7.0%         |    \$3,722.6M    |
+
+{% include figure.liquid path="assets/img/cat-modeling-proj_raroc-tvar.png" alt="Bar chart of RAROC by state-peril at four Co-TVaR thresholds: 90%, 96%, 98%, and 99%" caption="RAROC by state-peril across Co-TVaR thresholds (90%, 96%, 98%, 99%)" %}
 
 Notice that Florida Windstorm was held flat. It already dominated capital consumption, and its return doesn't justify further portfolio concentration. By contrast, Texas Windstorm offered strong return with less capital tied up, so I targeted this exposure for aggressive scaling.
 

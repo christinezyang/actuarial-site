@@ -49,7 +49,11 @@ We also tried polynomial extensions (`totwrk²`, `age²`), but they only improve
 
 ## Step 3: Prediction Comparison
 
-With the inferential winner chosen, we turned to a different question: which model actually predicts best on data it hasn't seen? We compared eight models via 10-fold cross-validation on the full 532-observation dataset: OLS Interaction 1, Ridge, Lasso, and Elastic Net (each with and without the interaction term), and Principal Component Analysis (PCA) Regression (3 components capturing 88.4% of continuous-predictor variance, combined with the binary variables). The table below is a snippet of the results:
+With the inferential winner chosen, we turned to a different question: which model actually predicts best on data it hasn't seen? We compared eight models via 10-fold cross-validation on the full 532-observation dataset: OLS Interaction 1, Ridge, Lasso, and Elastic Net (each with and without the interaction term), and Principal Component Analysis (PCA) Regression (3 components capturing 88.4% of continuous-predictor variance, combined with the binary variables).
+
+{% include figure.liquid path="assets/img/sleep-duration-proj_pca-scree-cumu-var.png" alt="Scree plot and cumulative variance explained plot for the PCA regression, showing the first 3 components capturing 88.4% of continuous-predictor variance" caption="Scree plot and cumulative variance explained for PCA regression" %}
+
+The table below is a snippet of the results:
 
 |         Model         |    CV MSE     |  CV RMSE   |   CV R²    |
 | :-------------------: | :-----------: | :--------: | :--------: |
@@ -62,7 +66,11 @@ With the inferential winner chosen, we turned to a different question: which mod
 
 Note that RMSE reports in the original units of sleep minutes per week.
 
-The simple 5-parameter OLS beat everything. Three observations:
+The simple 5-parameter OLS beat everything.
+
+{% include figure.liquid path="assets/img/sleep-duration-proj_ridge-lasso-paths.png" alt="Coefficient paths for Ridge, Lasso, and Elastic Net regression as the regularization penalty varies" caption="Ridge, Lasso, and Elastic Net coefficient paths" %}
+
+Three observations:
 
 - **Regularization couldn't do much:** Ridge and Lasso are most valuable with many predictors of uncertain relevance and high overfitting risk. Here, OLS variable selection had already found the only real signal, so the added work didn't achieve much. Lasso zeroed the interaction term immediately, confirming it was noise for prediction purposes.
 - **PCA was worse:** The dataset has one dominant predictor (`totwrk`) and many weak, mostly uncorrelated ones. Undergoing PCA actually diluted `totwrk` across components, and its negative CV R² means it predicted _worse than just guessing the mean_ on held-out folds.
@@ -81,11 +89,7 @@ RF also did worse. Its flexibility added unnecessary variance, which aligns with
 
 Two cross-checks reinforced the picture: both RF's importance ranking (% increase in MSE) and OLS's absolute t-statistics independently rank `totwrk` first by a wide margin, and RF's marginal-effect curve for work hours wiggles around the OLS line without any systematic nonlinear shape.
 
-{% comment %}
-TODO: insert marginal-effect comparison plot (OLS vs. Random Forest, effect of work hours on sleep) here.
-Upload the image to assets/img/ then use:
-{% include figure.liquid path="assets/img/FILENAME.png" caption="Marginal effect of work hours on sleep: OLS vs. Random Forest" %}
-{% endcomment %}
+{% include figure.liquid path="assets/img/sleep-duration-proj_marginal-effect-ols-rf.png" alt="Line chart comparing the OLS and Random Forest predicted marginal effect of total work hours on predicted sleep; the Random Forest curve wiggles around the OLS line without systematic divergence" caption="Marginal effect of work hours on predicted sleep: OLS vs. Random Forest" %}
 
 ## Conclusion: A Data Ceiling
 
