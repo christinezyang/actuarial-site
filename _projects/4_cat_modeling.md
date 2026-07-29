@@ -26,13 +26,13 @@ We were given 10,000 simulation years of catastrophe model output: losses from c
 
 |     | YearKey | Gross_Loss | TX Windstorm | TX Earthquake | ... |
 | :-: | :-----: | :--------: | :----------: | :-----------: | :-: |
-|  1  |    1    |    `$`     |      0       |       0       | ... |
-|  2  |    1    |    `$`     |      0       |      `$`      | ... |
-|  3  |    1    |    `$`     |      0       |       0       | ... |
-| ... |   ...   |    `$`     |     ...      |      ...      | ... |
-| 10  |    2    |    `$`     |      0       |      `$`      | ... |
-| 11  |    2    |    `$`     |      0       |       0       | ... |
-| ... |   ...   |    `$`     |     ...      |      ...      | ... |
+|  1  |    1    |    \\$     |      0       |       0       | ... |
+|  2  |    1    |    \\$     |      0       |      \\$      | ... |
+|  3  |    1    |    \\$     |      0       |       0       | ... |
+| ... |   ...   |    \\$     |     ...      |      ...      | ... |
+| 10  |    2    |    \\$     |      0       |      \\$      | ... |
+| 11  |    2    |    \\$     |      0       |       0       | ... |
+| ... |   ...   |    \\$     |     ...      |      ...      | ... |
 
 <div class="caption">Recreated Sample of Cat Model Output</div>
 
@@ -41,7 +41,7 @@ The risk analyst's job is to extract business-relevant patterns to inform a deci
 The fictitious client is a P&C insurer who has underwritten catastrophe exposure in these state-perils. Our job was to:
 
 - Analyze the portfolio's risk profile across the seven most significant state-peril exposures.
-- Recommend how to deploy `$500 million` in excess capital to grow the portfolio while maximizing risk-adjusted return.
+- Recommend how to deploy \\$500 million in excess capital to grow the portfolio while maximizing risk-adjusted return.
 
 ## Analytics Foundation
 
@@ -61,9 +61,9 @@ The project scope focused on seven specific state-peril combinations that made u
 
 | Year | FL WS | CA EQ | TX WS | ... |
 | :--: | :---: | :---: | :---: | :-: |
-|  1   |  `$`  |  `$`  |  `$`  | ... |
-|  2   |  `$`  |  `$`  |  `$`  | ... |
-| ...  |  `$`  |  `$`  |  `$`  | ... |
+|  1   |  \\$  |  \\$  |  \\$  | ... |
+|  2   |  \\$  |  \\$  |  \\$  | ... |
+| ...  |  \\$  |  \\$  |  \\$  | ... |
 
 <div class="caption">Recreated Sample of Cleaned Data</div>
 
@@ -95,13 +95,13 @@ $$ \sigma / \mu $$
 
 Florida Windstorm dominated both Mean Loss and PML metrics, which is not surprising given its hurricane history and density of insured coastal assets. California Earthquake ranked second.
 
-{% include figure.liquid path="assets/img/cat-modeling-proj_state-perils-pml.png" alt="Bar chart of 100-year and 250-year PML for the seven state-perils" caption="100-year and 250-year PML by state-peril" %}
+{% include figure.liquid path="assets/img/cat-modeling-proj_state-perils-pml.png" alt="Bar chart of 100-year and 250-year PML for the seven state-perils" caption="100-Year and 250-Year PML by State-Peril" %}
 
 ### Step 3: Reinsurance Modeling
 
 We modeled an Excess-of-Loss (XOL) reinsurance structure on the portfolio, which caps the insurer's net loss above a specified threshold — the insurer's retention (the attachment point at which reinsurance takes over). Reinsurance can reshape the tail by taking over the highest losses (subject to limits and other contractual agreements). XOL reinsurance specifically won't reduce everyday expected costs but does protect against large ones.
 
-In this case, reinsurance reduced portfolio mean loss by 18.9% (`$278.7M` → `$226.0M`) and 99% TVaR by 30% (`$5.27B` → `$3.69B`).
+In this case, reinsurance reduced portfolio mean loss by 18.9% (\\$278.7M → \\$226.0M) and 99% TVaR by 30% (\\$5.27B → \\$3.69B).
 
 This reinsurance exercise was its own separate question, so the following capital allocation analysis works from the portfolio's gross loss distribution.
 
@@ -135,27 +135,27 @@ For those whose core concern is solvency under stress, this is the preferred cap
 
 ### Step 5: Portfolio Growth Recommendation
 
-We were given `$500M` in excess capital to deploy, with a target total capital of `$4,606.5M`. The only constraints were that each exposure could grow up to 100% and could not be reduced.
+We were given \\$500M in excess capital to deploy, with a target total capital of \\$4,606.5M. The only constraints were that each exposure could grow up to 100% and could not be reduced.
 
 The objective was to maximize portfolio _Return on Risk-Adjusted Capital_ (RAROC), a standard measure of how much profit the portfolio generates per unit of risk capital consumed.
 
 $$ RAROC = \text{Profit Load} / \text{Allocated Risk Capital} $$
 
-At the portfolio level, pre-growth: `$388.1M` / `$4,106.5M` = 9.45%.
+At the portfolio level, pre-growth: \\$388.1M / \\$4,106.5M = 9.45%.
 
 I used the Co-TVaR capital allocation method for the basis of my growth recommendation. Using this method, I calculated individual RAROCs for each state-peril. Exposures with high RAROC and (relatively) low Co-TVaR capital consumption are the most efficient uses of incremental capital. I scaled those aggressively. Exposures with low RAROC, especially if they already consume a large share of capital, should stay more flat. The specific numbers for growth factors were decided by optimizing portfolio RAROC.
 
 |  State/Peril  | RAROC (99% Co-TVaR) | Capital Consumed |
 | :-----------: | :-----------------: | :--------------: |
-|   Hawaii EQ   |        53.0%        |     `$1.4M`      |
-|   Hawaii WS   |        48.6%        |     `$11.5M`     |
-| Washington EQ |        33.9%        |     `$26.8M`     |
-| Louisiana WS  |        42.1%        |     `$43.2M`     |
-|   Texas WS    |        62.5%        |     `$56.3M`     |
-| California EQ |        23.3%        |    `$244.6M`     |
-|  Florida WS   |        7.0%         |   `$3,722.6M`    |
+|   Hawaii EQ   |        53.0%        |     \\$1.4M      |
+|   Hawaii WS   |        48.6%        |     \\$11.5M     |
+| Washington EQ |        33.9%        |     \\$26.8M     |
+| Louisiana WS  |        42.1%        |     \\$43.2M     |
+|   Texas WS    |        62.5%        |     \\$56.3M     |
+| California EQ |        23.3%        |    \\$244.6M     |
+|  Florida WS   |        7.0%         |   \\$3,722.6M    |
 
-{% include figure.liquid path="assets/img/cat-modeling-proj_raroc-tvar.png" alt="Bar chart of RAROC by state-peril at four Co-TVaR thresholds: 90%, 96%, 98%, and 99%" caption="RAROC by state-peril across Co-TVaR thresholds (90%, 96%, 98%, 99%)" %}
+{% include figure.liquid path="assets/img/cat-modeling-proj_raroc-tvar.png" alt="Bar chart of RAROC by state-peril at four Co-TVaR thresholds: 90%, 96%, 98%, and 99%" caption="RAROC by State-Peril across Co-TVaR Thresholds (90%, 96%, 98%, 99%)" %}
 
 Notice that Florida Windstorm was held flat. It already dominated capital consumption, and its return doesn't justify further portfolio concentration. By contrast, Texas Windstorm offered strong return with less capital tied up, so I targeted this exposure for aggressive scaling.
 
@@ -173,9 +173,9 @@ The recommended growth factors:
 
 #### Result
 
-- Portfolio profit increased from `$388.1M` to `$467.0M` (+20.3%).
+- Portfolio profit increased from \\$388.1M to \\$467.0M (+20.3%).
 - Portfolio RAROC improved from 9.45% to 10.15% (+70bps).
-- Total risk capital was `$4,602.1M` (`$4.4M` under the client's target constraint).
+- Total risk capital was \\$4,602.1M (\\$4.4M under the client's target constraint).
 
 ### Step 6: Presentation
 

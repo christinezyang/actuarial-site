@@ -98,3 +98,28 @@ html[data-theme="dark"] {
 .projects h2.category {
   color: var(--global-text-color-light);
 }
+
+// Plain markdown tables (kramdown-generated, no .table class) inherit a bare
+// `table { width: 100%; }` rule from the gem's base styles, forcing every
+// table to span the full content width regardless of how little text is in
+// it. Switching to width: auto lets the browser's default table layout
+// algorithm size each column to its widest cell (exactly kramdown/GFM's
+// normal behavior), and margin: auto centers the now-narrower table. Scoped
+// to the bare `table` element only, so anything using the separate `.table`
+// class (e.g. the pretty-table feature) is unaffected.
+table {
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// figure.liquid hardcodes width="100%" on every <img>. Cap it with max-width
+// so post/project images read as inline figures rather than full-bleed
+// banners, and center the (now-narrower) image within its <figure>.
+.post article figure {
+  text-align: center;
+}
+
+.post article figure img {
+  max-width: 70%;
+}

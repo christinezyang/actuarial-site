@@ -51,7 +51,7 @@ We also tried polynomial extensions (`totwrk²`, `age²`), but they only improve
 
 With the inferential winner chosen, we turned to a different question: which model actually predicts best on data it hasn't seen? We compared eight models via 10-fold cross-validation on the full 532-observation dataset: OLS Interaction 1, Ridge, Lasso, and Elastic Net (each with and without the interaction term), and Principal Component Analysis (PCA) Regression (3 components capturing 88.4% of continuous-predictor variance, combined with the binary variables).
 
-{% include figure.liquid path="assets/img/sleep-duration-proj_pca-scree-cumu-var.png" alt="Scree plot and cumulative variance explained plot for the PCA regression, showing the first 3 components capturing 88.4% of continuous-predictor variance" caption="Scree plot and cumulative variance explained for PCA regression" %}
+{% include figure.liquid path="assets/img/sleep-duration-proj_pca-scree-cumu-var.png" alt="Scree plot and cumulative variance explained plot for the PCA regression, showing the first 3 components capturing 88.4% of continuous-predictor variance" caption="Scree Plot and Cumulative Variance Explained for PCA Regression" %}
 
 The table below is a snippet of the results:
 
@@ -68,7 +68,7 @@ Note that RMSE reports in the original units of sleep minutes per week.
 
 The simple 5-parameter OLS beat everything.
 
-{% include figure.liquid path="assets/img/sleep-duration-proj_ridge-lasso-paths.png" alt="Coefficient paths for Ridge, Lasso, and Elastic Net regression as the regularization penalty varies" caption="Ridge, Lasso, and Elastic Net coefficient paths" %}
+{% include figure.liquid path="assets/img/sleep-duration-proj_ridge-lasso-paths.png" alt="Coefficient paths for Ridge, Lasso, and Elastic Net regression as the regularization penalty varies" caption="Ridge, Lasso, and Elastic Net Coefficient Paths" %}
 
 Three observations:
 
@@ -89,7 +89,7 @@ RF also did worse. Its flexibility added unnecessary variance, which aligns with
 
 Two cross-checks reinforced the picture: both RF's importance ranking (% increase in MSE) and OLS's absolute t-statistics independently rank `totwrk` first by a wide margin, and RF's marginal-effect curve for work hours wiggles around the OLS line without any systematic nonlinear shape.
 
-{% include figure.liquid path="assets/img/sleep-duration-proj_marginal-effect-ols-rf.png" alt="Line chart comparing the OLS and Random Forest predicted marginal effect of total work hours on predicted sleep; the Random Forest curve wiggles around the OLS line without systematic divergence" caption="Marginal effect of work hours on predicted sleep: OLS vs. Random Forest" %}
+{% include figure.liquid path="assets/img/sleep-duration-proj_marginal-effect-ols-rf.png" alt="Line chart comparing the OLS and Random Forest predicted marginal effect of total work hours on predicted sleep; the Random Forest curve wiggles around the OLS line without systematic divergence" caption="Marginal Effect of Work Hours on Predicted Sleep: OLS vs. Random Forest" %}
 
 ## Conclusion: A Data Ceiling
 
