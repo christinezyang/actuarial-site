@@ -8,7 +8,7 @@ importance: 2
 tags: [OLS, Ridge/Lasso/Elastic Net, PCA, Random Forest, Cross-Validation, R]
 ---
 
-**Class:** Predictive Modeling (2026)
+**Class:** Predictive Modeling in Finance & Insurance (2026)
 
 Predictive Modeling is a graduate statistics course covering the full modern regression toolkit: OLS and model selection, regularization (Ridge, Lasso, Elastic Net), GLMs, dimension reduction (PCA), tree-based methods, cross-validation. The final project was an open-ended group product (four members) applying that toolkit on a real dataset.
 
