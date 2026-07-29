@@ -92,6 +92,9 @@ html[data-theme="dark"] {
 // for border lines, not text - reads as almost blank. Switch just the text
 // color to --global-text-color-light (same muted grey used for card
 // subtitles/tags) while leaving the divider line/right-alignment as-is.
-h2.category {
+// Selector must match the gem's actual specificity (.projects h2.category,
+// two classes) - a bare h2.category rule loses to it regardless of source
+// order, which is why the first attempt at this fix had no visible effect.
+.projects h2.category {
   color: var(--global-text-color-light);
 }
