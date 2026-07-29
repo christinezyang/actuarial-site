@@ -85,3 +85,13 @@ html[data-theme="dark"] {
 .post h2 {
   text-transform: capitalize;
 }
+
+// al_folio_core's h2.category (the "Work Experience" / "Projects" / "Prior
+// Experience" section labels on /projects/) is styled with
+// --global-divider-color, a near-invisible ~10%-black hairline color meant
+// for border lines, not text - reads as almost blank. Switch just the text
+// color to --global-text-color-light (same muted grey used for card
+// subtitles/tags) while leaving the divider line/right-alignment as-is.
+h2.category {
+  color: var(--global-text-color-light);
+}
