@@ -2,7 +2,7 @@
 layout: page
 title: "Wildfire Expected Loss Modeling"
 subtitle: Data Science in Finance & Insurance, Columbia University
-description: Built a three-part parcel-level wildfire risk model — occurrence probability, damage severity, and expected dollar loss — across roughly 21,400 LA County properties.
+description: Built a three-part parcel-level wildfire risk model (occurrence probability, damage severity, expected dollar loss) across 21,000+ LA County properties.
 category: projects
 importance: 3
 tags: [Multinomial Naive Bayes, Random Forest, Gradient Boosting, Data Imputation, Python]
