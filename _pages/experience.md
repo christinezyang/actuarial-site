@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Projects
-permalink: /projects/
+title: Experience
+permalink: /experience/
 description: Work experience, course projects, and prior (pre-actuarial) experience.
 nav: true
 nav_order: 3
@@ -9,7 +9,7 @@ display_categories: [work-experience, projects, prior-experience]
 horizontal: false
 ---
 
-<!-- pages/projects.md -->
+<!-- pages/experience.md -->
 <div class="projects">
 {% if site.enable_project_categories and page.display_categories %}
   <!-- Display categorized projects -->

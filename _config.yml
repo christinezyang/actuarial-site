@@ -172,6 +172,7 @@ collections:
     output: true
   projects:
     output: true
+    permalink: /experience/:path/
 #  teachings:
 #    output: true
 
