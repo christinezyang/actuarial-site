@@ -2,7 +2,7 @@
 layout: page
 title: "Business Operations Generalist"
 subtitle: Internship, Riva
-description: Worked directly with Riva's CEO on ad hoc special projects, from rewriting the company's pricing page to diagnosing why clients dropped out of the sales pipeline.
+description: Diagnosed client pipeline dropouts and rewrote confusing site content. Worked directly with CEO.
 category: prior-experience
 importance: 1
 tags: [Startup]

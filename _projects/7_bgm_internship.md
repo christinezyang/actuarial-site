@@ -2,7 +2,7 @@
 layout: page
 title: "Business Operations Generalist"
 subtitle: Internship, Black Girl MATHgic
-description: Tracked website analytics, contributed site content, and created social graphics for a startup math-confidence subscription box for young Black girls.
+description: Tracked website analytics, contributed site content, and created social media graphics for a math-confidence startup. Worked directly with founder.
 category: prior-experience
 importance: 2
 tags: [Google Analytics, Startup]
