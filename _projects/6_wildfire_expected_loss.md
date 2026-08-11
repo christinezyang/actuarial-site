@@ -60,7 +60,7 @@ A normalized score of 2 means a parcel carries twice the county-average relative
 
 To turn the relative score to actual probability, we needed a baseline. Sampled uniformly, the average probability that a given building experiences a fire in a year is the number of fire events in the county divided by the number of parcels. Using 2024 [ReGrid](https://app.regrid.com/store/us/ca/los-angeles) and [LA County Economic Development Corporation](https://laedc.org/wp-content/uploads/2025/02/LAEDC_2025-LA-Wildfires-Study_090525-UPDATE.pdf) figures:
 
-$$ p_{mean} = \frac{\text{\# of fire events}}{\text{\# of parcels}} = \frac{20{,}218}{2{,}429{,}237} \approx 0.008322 $$
+$$ p_{mean} = \frac{\text{# of fire events}}{\text{# of parcels}} = \frac{20{,}218}{2{,}429{,}237} \approx 0.008322 $$
 
 Multiplying this baseline by each parcel's normalized relative risk gives the final fire occurrence risk for each parcel:
 
