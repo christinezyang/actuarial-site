@@ -4,7 +4,7 @@ title: "Business Operations Generalist"
 subtitle: Internship, Riva
 description: Diagnosed client pipeline dropouts and rewrote confusing site content. Worked directly with CEO.
 category: prior-experience
-importance: 1
+importance: 2
 tags: [Startup]
 ---
 

@@ -4,7 +4,7 @@ title: "Business Operations Generalist"
 subtitle: Internship, Black Girl MATHgic
 description: Tracked website analytics, contributed site content, and created social media graphics for a math-confidence startup. Worked directly with founder.
 category: prior-experience
-importance: 2
+importance: 3
 tags: [Google Analytics, Startup]
 ---
 
