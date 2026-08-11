@@ -69,11 +69,14 @@ for (const forbiddenPath of ["_layouts", "_sass", "_scripts", "assets/tailwind",
 
 // `_includes` is otherwise forbidden too, but this site intentionally owns a small,
 // explicitly allow-listed set of overrides: projects.liquid adds `subtitle`/`tags`
-// support to the project card template, and latest_posts.liquid fixes an upstream
+// support to the project card template, latest_posts.liquid fixes an upstream
 // empty-state bug (it checked whether the front matter config block was blank, not
 // whether site.posts was actually empty) so a real "no posts yet" message shows on
-// the about page instead of an empty table. Anything else here still fails the check.
-const includesAllowlist = new Set(["projects.liquid", "latest_posts.liquid"]);
+// the about page instead of an empty table, and news.liquid drops the date column's
+// fixed 20% width (an inline style, so only fixable by editing the template - CSS
+// can't override an inline style without !important) and switches the date format
+// to month + year only. Anything else here still fails the check.
+const includesAllowlist = new Set(["projects.liquid", "latest_posts.liquid", "news.liquid"]);
 if (exists("_includes")) {
   const includesEntries = fs.readdirSync(path.join(root, "_includes"));
   const unexpectedIncludes = includesEntries.filter((entry) => !includesAllowlist.has(entry));
